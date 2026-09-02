@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getImage, hasImage } from '../lib/images';
+import { url } from '../lib/url';
 import type { Project } from '../lib/types';
 
 interface Props {
@@ -12,7 +13,7 @@ const cover = project.images.find((img) => hasImage(img.file));
 ---
 
 <a
-  href={`/projects/${project.slug}`}
+  href={url(`/projects/${project.slug}`)}
   class="group flex flex-col overflow-hidden rounded-lg bg-white shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-card-hover)]"
 >
   <div class="aspect-[4/3] w-full overflow-hidden bg-slate-200">

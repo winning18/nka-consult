@@ -1,4 +1,6 @@
 ---
+import { url } from '../lib/url';
+
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
@@ -10,13 +12,14 @@ const navLinks = [
 
 const currentPath = Astro.url.pathname;
 function isActive(href: string) {
-  return href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+  const target = url(href);
+  return href === '/' ? currentPath === target : currentPath.startsWith(target);
 }
 ---
 
 <header class="sticky top-0 z-50 bg-paper-50/90 backdrop-blur border-b border-slate-200">
   <div class="container-page flex items-center justify-between h-18 py-3">
-    <a href="/" class="flex items-center gap-2.5 group">
+    <a href={url('/')} class="flex items-center gap-2.5 group">
       <span class="flex h-10 w-10 items-center justify-center rounded-md bg-navy-800 text-white font-bold text-lg tracking-tight">
         NK
       </span>
@@ -29,7 +32,7 @@ function isActive(href: string) {
     <nav class="hidden lg:flex items-center gap-1">
       {navLinks.map((link) => (
         <a
-          href={link.href}
+          href={url(link.href)}
           class:list={[
             'px-3 py-2 text-sm font-medium rounded transition-colors',
             isActive(link.href)
@@ -44,7 +47,7 @@ function isActive(href: string) {
 
     <div class="hidden lg:block">
       <a
-        href="/contact"
+        href={url('/contact')}
         class="inline-flex items-center gap-1.5 rounded-md bg-navy-800 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
       >
         Contact Us
@@ -71,7 +74,7 @@ function isActive(href: string) {
     <div class="container-page py-3 flex flex-col gap-1">
       {navLinks.map((link) => (
         <a
-          href={link.href}
+          href={url(link.href)}
           class:list={[
             'px-3 py-2.5 text-sm font-medium rounded',
             isActive(link.href) ? 'text-navy-800 bg-navy-800/[0.06]' : 'text-slate-600',
@@ -80,7 +83,7 @@ function isActive(href: string) {
           {link.label}
         </a>
       ))}
-      <a href="/contact" class="mt-2 inline-flex items-center justify-center rounded-md bg-navy-800 px-4 py-2.5 text-sm font-semibold text-white">
+      <a href={url('/contact')} class="mt-2 inline-flex items-center justify-center rounded-md bg-navy-800 px-4 py-2.5 text-sm font-semibold text-white">
         Contact Us
       </a>
     </div>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import CTASection from '../components/CTASection.astro';
+import { url } from '../lib/url';
 import company from '../data/company.json';
 ---
 
@@ -66,7 +67,7 @@ import company from '../data/company.json';
       <div>
         <SectionHeading eyebrow="Compliance" title="Legal Status" />
         <p class="mt-4 text-sm leading-relaxed text-slate-600">{company.legalStatus}</p>
-        <a href="/credentials" class="mt-4 inline-block text-sm font-semibold text-navy-800 hover:text-navy-700">
+        <a href={url('/credentials')} class="mt-4 inline-block text-sm font-semibold text-navy-800 hover:text-navy-700">
           View registration certificates &rarr;
         </a>
       </div>
@@ -82,7 +83,7 @@ import company from '../data/company.json';
         ))}
       </div>
       <div class="mt-8 text-center">
-        <a href="/team" class="text-sm font-semibold text-navy-800 hover:text-navy-700">Meet our leadership &rarr;</a>
+        <a href={url('/team')} class="text-sm font-semibold text-navy-800 hover:text-navy-700">Meet our leadership &rarr;</a>
       </div>
     </div>
   </section>

@@ -5,6 +5,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import CTASection from '../components/CTASection.astro';
 import { getImage, hasImage } from '../lib/images';
+import { url } from '../lib/url';
 import company from '../data/company.json';
 import projectsData from '../data/projects.json';
 import donorsData from '../data/donors.json';
@@ -54,10 +55,10 @@ const stats = [
         {company.overview}
       </p>
       <div class="mt-9 flex flex-wrap items-center gap-4">
-        <a href="/projects" class="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-ink-900 hover:bg-amber-400 transition-colors">
+        <a href={url('/projects')} class="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-ink-900 hover:bg-amber-400 transition-colors">
           View Our Projects
         </a>
-        <a href="/contact" class="inline-flex items-center gap-2 rounded-md border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+        <a href={url('/contact')} class="inline-flex items-center gap-2 rounded-md border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
           Get in Touch
         </a>
       </div>
@@ -93,7 +94,7 @@ const stats = [
         ))}
       </div>
       <div class="mt-10">
-        <a href="/services" class="text-sm font-semibold text-navy-800 hover:text-navy-700">
+        <a href={url('/services')} class="text-sm font-semibold text-navy-800 hover:text-navy-700">
           Explore all services &rarr;
         </a>
       </div>
@@ -108,7 +109,7 @@ const stats = [
           title="Featured projects"
           description="A sample of infrastructure NKA Consult has designed, supervised, or delivered across roads, ports, health facilities, and public buildings."
         />
-        <a href="/projects" class="text-sm font-semibold text-navy-800 hover:text-navy-700 whitespace-nowrap">
+        <a href={url('/projects')} class="text-sm font-semibold text-navy-800 hover:text-navy-700 whitespace-nowrap">
           View all {projects.length} projects &rarr;
         </a>
       </div>
@@ -133,7 +134,7 @@ const stats = [
         )}
       </div>
       <div class="mt-6 text-center">
-        <a href="/clients-donors" class="text-sm font-semibold text-navy-800 hover:text-navy-700">
+        <a href={url('/clients-donors')} class="text-sm font-semibold text-navy-800 hover:text-navy-700">
           See all clients &amp; donors &rarr;
         </a>
       </div>
