@@ -1,0 +1,55 @@
+---
+import company from '../data/company.json';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-ink-800 text-slate-300">
+  <div class="container-page py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <div class="flex items-center gap-2.5 mb-4">
+        <span class="flex h-9 w-9 items-center justify-center rounded-md bg-white/10 text-white font-bold text-sm">NK</span>
+        <span class="font-bold text-white text-[15px]">NKA Consult</span>
+      </div>
+      <p class="text-sm leading-relaxed text-slate-400">
+        {company.tagline}. Delivering engineering and management consulting services across Ghana and West Africa since {company.founded}.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Company</h3>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
+        <li><a href="/services" class="hover:text-white transition-colors">Services</a></li>
+        <li><a href="/team" class="hover:text-white transition-colors">Our People</a></li>
+        <li><a href="/credentials" class="hover:text-white transition-colors">Credentials</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Work</h3>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/projects" class="hover:text-white transition-colors">Projects</a></li>
+        <li><a href="/clients-donors" class="hover:text-white transition-colors">Clients &amp; Donors</a></li>
+        <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Head Office</h3>
+      <address class="not-italic text-sm leading-relaxed text-slate-400 space-y-1.5">
+        <p>{company.contact.headOffice.address}</p>
+        <p>GPS: {company.contact.headOffice.gpsAddress}</p>
+        <p>{company.contact.poBox}</p>
+        <p>{company.contact.phone}</p>
+        <p class="break-all">{company.contact.emails[0]}</p>
+      </address>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="container-page py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
+      <p>&copy; {year} NKA Consult Limited. All rights reserved.</p>
+      <p>Engineers &amp; Management Consultants, Accra, Ghana</p>
+    </div>
+  </div>
+</footer>

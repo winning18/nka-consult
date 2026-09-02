@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import { getImage, hasImage } from '../lib/images';
+import type { Project } from '../lib/types';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const cover = project.images.find((img) => hasImage(img.file));
+---
+
+<a
+  href={`/projects/${project.slug}`}
+  class="group flex flex-col overflow-hidden rounded-lg bg-white shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-card-hover)]"
+>
+  <div class="aspect-[4/3] w-full overflow-hidden bg-slate-200">
+    {cover ? (
+      <Image
+        src={getImage(cover.file)}
+        alt={cover.caption ?? project.title}
+        width={480}
+        height={360}
+        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+    ) : (
+      <div class="flex h-full w-full items-center justify-center text-slate-400 text-sm">No photo available</div>
+    )}
+  </div>
+  <div class="flex flex-1 flex-col p-5">
+    <span class="text-xs font-semibold uppercase tracking-wider text-amber-600">{project.categoryLabel}</span>
+    <h3 class="mt-1.5 text-base font-semibold leading-snug text-ink-800 group-hover:text-navy-800 transition-colors">
+      {project.title}
+    </h3>
+    <p class="mt-1.5 text-sm text-slate-500">{project.location || project.country}</p>
+    {project.value && (
+      <p class="mt-3 text-sm font-medium text-navy-800">{project.value}</p>
+    )}
+  </div>
+</a>

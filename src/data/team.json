@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Dr. Andrews Kwablah",
+    "credentials": "BSc, MSc, MBA, PhD",
+    "role": "Managing Consultant & Chief Executive Officer",
+    "bio": "Dr Kwablah is the Managing Consultant of NKA Consult. He has over 30 years' experience in Civil Engineering, Project Management, Procurement, Infrastructure Planning and Development, Pre- and Post-Project Appraisals, Traffic Engineering, Training, and General Financial Management. He has worked with the Ministry of Local Government and Rural Development, the Ministry of Sanitation and Water Resources, the Ministry of Roads and Highways, the Department of Urban Roads, the Department of Feeder Roads, the Accra Metropolitan Authority, the African Development Bank, the World Bank, the Ghana Ports and Harbours Authority, the European Union, and the Canadian International Development Agency, among others. He has been involved in feasibility studies, project design, project supervision, evaluation, technical audits and other advisory services to clients.",
+    "featured": true
+  },
+  {
+    "name": "Ernest Owusu Atakora",
+    "credentials": "BSc, MSc",
+    "role": "Highway Engineer",
+    "bio": "A Civil Engineer with more than 30 years' experience in the road industry, involved in planning, route location, geometric design, storm water drainage design, materials investigation, pavement design, preparation of bills of quantities, cost estimation, and tender documentation, conversant with FIDIC/World Bank/EU/AfDB/Government of Ghana conditions of works contract. Over 20 years' experience in major road projects across Sub-Saharan Africa, including site supervision as Resident Engineer on three major road works contracts.",
+    "featured": false
+  },
+  {
+    "name": "K. D. Boateng",
+    "credentials": "BSc, Post-Graduate Diploma",
+    "role": "Traffic & Transport Engineering",
+    "bio": "Remarkable experience in Traffic and Transport Engineering, capacity building and project management, including project identification, formulation, appraisal, tender documentation and evaluation, coordination of funding agencies including the World Bank, OEF of Japan, the Saudi Fund for Development and the European Union, and general contract administration of complex projects.",
+    "featured": false
+  },
+  {
+    "name": "Justice M. Y. Amegashie",
+    "credentials": "BA, LLB, MSc",
+    "role": "Lawyer & Transportation Professional",
+    "bio": "An extensive career in Ghana's public service, having served as Chief Executive Officer of the Driver and Vehicle Licensing Authority, Director for the Ministry of Harbours and Railways and the Ministry of Roads and Transport, and Executive Director of the National Road Safety Commission. A published author in Road Safety and a Consultant, Adviser, Trainer, and Speaker in Road Safety, Transportation, and Legal assignments in Ghana and beyond.",
+    "featured": false
+  },
+  {
+    "name": "Francis Jnr Tuuli Gamuo",
+    "credentials": "BSc (Building Technology)",
+    "role": "Quantity Surveyor",
+    "bio": "Over 12 years' experience in quantity surveying in both civil and building works, with competencies in feasibility studies, estimation, tender preparation and evaluation, contract document preparation, interim certificates and general contract administration. Clients include the Ministry of Local Government and Rural Development, the Ministry of Roads and Highways, the Department of Urban Roads and the Department of Feeder Roads.",
+    "featured": false
+  },
+  {
+    "name": "Godwin Ofori Amoah",
+    "credentials": "MSc (Structural Engineering)",
+    "role": "Structural Engineer",
+    "bio": "Over twenty years' experience in structural and civil engineering, involved in all aspects of structural engineering practice. Recent projects include serving as structural engineer for the Kempinski Hotel in Accra.",
+    "featured": false
+  },
+  {
+    "name": "Michael Opata",
+    "credentials": "BSc, MSc (Civil and Structural Engineering)",
+    "role": "Structural Engineer",
+    "bio": "An extensive engineering practice spanning over 15 years in structural engineering. Has worked on mining projects as structural engineer designing and managing various mine projects, with recent work including the Kumasi Mall.",
+    "featured": false
+  },
+  {
+    "name": "Gordon Apenyo Hlorlewu",
+    "credentials": "BSc, MSc (Geodetic Engineering)",
+    "role": "Geodetic Engineer",
+    "bio": "Over 20 years of professional experience in Road Survey and Design and land surveying, including topographical surveys, land title registration and acquisition surveys. Has undertaken design projects for several highway corridors in the Ashanti Region and surveyed and designed roads for the Department of Urban Roads in the Kumasi Metropolis, Wa and Cape Coast Municipality.",
+    "featured": false
+  },
+  {
+    "name": "Evans Oduro",
+    "credentials": "Dip, BSc (Electrical Engineering)",
+    "role": "Electrical Engineer",
+    "bio": "Over 30 years' experience in electrical engineering practice spanning Ghana and Nigeria, in both factory and construction consulting settings. Major areas of practice include design, specification and management of building services electrification, and supervision of power transmission and distribution network projects for industrial, commercial, banking, hospital and domestic complexes.",
+    "featured": false
+  },
+  {
+    "name": "Ing. Omani",
+    "credentials": "BSc, MSc (Mechanical Engineering)",
+    "role": "Mechanical Engineer",
+    "bio": "Over twenty-eight years of professional experience across several disciplines of mechanical engineering installations in building services, covering hotels, residential facilities and hospitals: plumbing and fire-fighting installations, industrial kitchens and laundry equipment, air-conditioning and ventilation, and sewer and sewerage treatment works. Extensive experience in potable water production, including research jointly with the Ghana Water Company and the National Service Secretariat.",
+    "featured": false
+  }
+]

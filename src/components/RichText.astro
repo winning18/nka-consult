@@ -1,0 +1,26 @@
+---
+import type { RichText } from '../lib/types';
+
+interface Props {
+  value: RichText | null;
+  class?: string;
+}
+
+const { value, class: className = '' } = Astro.props;
+const isStructured = value !== null && typeof value === 'object';
+---
+
+{value && (
+  <div class:list={['prose-body', className]}>
+    {isStructured ? (
+      <>
+        {value.intro && <p>{value.intro}</p>}
+        <ul class="mt-2 space-y-1.5 list-disc pl-5 marker:text-amber-500">
+          {value.items.map((item) => <li>{item}</li>)}
+        </ul>
+      </>
+    ) : (
+      <p>{value}</p>
+    )}
+  </div>
+)}

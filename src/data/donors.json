@@ -1,0 +1,61 @@
+[
+  {
+    "agency": "World Bank / IDA",
+    "role": "Project Coordinator",
+    "projects": ["Urban II Project", "Urban Transport Project", "Road Sector Development Project"]
+  },
+  {
+    "agency": "African Development Bank (AfDB)",
+    "role": "Consultant",
+    "projects": [
+      "Afram Plains District Agricultural Development Project involving feasibility studies, engineering design and construction supervision of feeder roads, fodder banks, markets, grain storage facilities and boreholes (Ministry of Food and Agriculture)",
+      "Construction of the Fufulso – Sawla Road project",
+      "Project Sustainability Evaluation of the Tetteh Quarshie to Mamfe Road",
+      "Project Implementation Manual for the Greater Accra Sustainable Sanitation and Livelihood Improvement Project"
+    ]
+  },
+  {
+    "agency": "DFID (UK)",
+    "role": "Consultant",
+    "projects": ["Training of Road Construction and Maintenance Contractors"]
+  },
+  {
+    "agency": "Agence Française de Développement (AFD)",
+    "role": "Project Coordinator",
+    "projects": [
+      "Urban Roads project in Sekondi-Takoradi and Tema",
+      "Kumasi Road and Urban Development",
+      "Accra Awoshie–Pokuase Road"
+    ]
+  },
+  {
+    "agency": "DANIDA (Denmark)",
+    "role": "Project Coordinator",
+    "projects": ["Road Safety projects under the Second Transport Support Programme (TSPS II) in Accra, Kumasi and Sekondi-Takoradi"]
+  },
+  {
+    "agency": "CIDA (Canada)",
+    "role": "Consultant",
+    "projects": ["Allowances Study", "Salary Scale Study"]
+  },
+  {
+    "agency": "German Technical Cooperation (GTZ)",
+    "role": "Consultant",
+    "projects": ["Training of Road Construction Contractors"]
+  },
+  {
+    "agency": "Nordic Fund",
+    "role": "Project Coordinator",
+    "projects": ["Urban II Project: Consulting Services for a Transport Planner"]
+  },
+  {
+    "agency": "European Union (EU)",
+    "role": "Consultant",
+    "projects": ["Final Evaluation of the 6th Micro Project, Ghana"]
+  },
+  {
+    "agency": "KfW",
+    "role": "Consultant",
+    "projects": ["Training Consultant, 300km Feeder Roads in Ashanti and Brong Ahafo Regions of Ghana"]
+  }
+]

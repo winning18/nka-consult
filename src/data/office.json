@@ -1,0 +1,20 @@
+{
+  "officeSetup": [
+    { "file": "image34.jpeg", "caption": "NKA Consult office" },
+    { "file": "image35.jpeg", "caption": "NKA Consult office" },
+    { "file": "image36.jpeg", "caption": "NKA Consult office" },
+    { "file": "image37.jpeg", "caption": "NKA Consult office" }
+  ],
+  "projectVehicles": [
+    { "file": "image38.jpeg", "caption": "Project vehicle" },
+    { "file": "image39.jpeg", "caption": "Project vehicle" },
+    { "file": "image40.jpeg", "caption": "Project vehicle" },
+    { "file": "image41.jpeg", "caption": "Project vehicle" }
+  ],
+  "fieldEquipment": [
+    { "file": "image42.jpeg", "caption": "Survey Equipment" },
+    { "file": "image43.jpeg", "caption": "Survey Equipment" },
+    { "file": "image44.jpeg", "caption": "Survey Equipment" },
+    { "file": "image45.jpeg", "caption": "Schmidt Hammer for Concrete Testing" }
+  ]
+}

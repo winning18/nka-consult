@@ -1,0 +1,61 @@
+{
+  "name": "NKA Consult",
+  "tagline": "Engineers and Management Consultants",
+  "founded": 2002,
+  "overview": "NKA Consult is a consulting firm with specialization in Engineering and Management. The company started operations in 2002. NKA Consult has a strong, experienced and professionally competent team with wide ranging backgrounds and experience in public service, private sector, consultancy practice and capacity building.",
+  "vision": "The preferred solution provider for businesses in Africa and beyond.",
+  "mission": "Our mission is to help organizations achieve the full potential of their mission in the ever-changing world of work.",
+  "coreValues": [
+    {
+      "name": "Relationships",
+      "description": "We believe in building engaged relationships with our clients, partners, employees, and community to foster the growth and success of our business."
+    },
+    {
+      "name": "Commitment",
+      "description": "We honour our commitments to our clients. We take ownership of our work and hold ourselves accountable for results."
+    },
+    {
+      "name": "Integrity",
+      "description": "We behave with the highest degree of professionalism, integrity, and courtesy in our actions with our clients."
+    },
+    {
+      "name": "Collaboration",
+      "description": "We work together, both as a company and with our clients, to share knowledge, foster innovation, solve problems, and deliver quality results."
+    }
+  ],
+  "coreBusinessAreas": [
+    "Project Cycle Management: Design, Procurement, Supervision, Appraisal, Monitoring and Evaluation",
+    "Civil and Structural Engineering",
+    "Urban Development and Management",
+    "Training and Capacity Building",
+    "Safeguards Management: Traffic, Transport, Environmental, Social, Resettlement Impact Assessment and Management",
+    "Road Safety, Traffic, and Transportation Engineering",
+    "Management Consulting"
+  ],
+  "coreTeamDisciplines": [
+    "Civil Engineers",
+    "Procurement Specialists",
+    "Traffic and Transportation Engineers",
+    "Architects",
+    "Structural Engineers",
+    "Geotechnical Engineers",
+    "Quantity Surveyors",
+    "Waste Management and Sanitation Engineers",
+    "Services Engineers"
+  ],
+  "legalStatus": "The firm is registered in Ghana with the Registrar General's Department and is duly authorised to operate in Ghana. NKA Consult is also registered with the relevant tax authorities: Ghana Revenue Authority, Value Added Tax (VAT), and the Public Procurement Authority (PPA). Key staff are registered with the relevant professional associations in Ghana, including the Ghana Institution of Engineering (GhIE) and the Ghana Institution of Surveyors (GhIS).",
+  "organization": "NKA Consult is managed by a Managing Consultant and Chief Executive Officer (CEO), who holds advanced qualifications in Civil Engineering and Business Management. The company has two major divisions: Engineering and Management Consulting. Each division is further divided into several units based on specialization, each staffed with competent professionals delivering cutting edge solutions to the firm's clients.",
+  "specializationNote": "The fields of specialization are divided into two broad areas: Engineering and Management Consulting. Crosscutting areas such as Procurement Management, Impact Assessment, and Monitoring and Evaluation are addressed by either division.",
+  "projectExecution": "As Consultants, the Firm favours a participatory and interactive approach to identifying client problems and providing solutions. Each project is assigned a Project Manager responsible for monthly technical and financial reports that allow an accurate evaluation of progress by the client. A set of qualitative and quantitative monitoring indicators, agreed at project inception and adapted to each project's needs, is used by the Project Manager to ensure goals, objectives and expected results are met in a timely and cost-effective manner.",
+  "coreCompetencies": "NKA Consult has provided services to several clients in managing projects in buildings, civil and structural engineering, architectural and quantity surveying. Other specializations include highway, traffic and transportation engineering, waste management, water and sanitation, social and environmental impact assessment, and management consulting. The firm has also taken on subcontract assignments for other consultants requiring its expertise.",
+  "contact": {
+    "poBox": "P. O. Box CO 1413, Tema, Ghana",
+    "phone": "020 816 1079",
+    "emails": ["nkaconsult@yahoo.com", "andrewskwablah@yahoo.com"],
+    "headOffice": {
+      "label": "Accra Head Office",
+      "address": "57 Kade Avenue, Kanda Estates, Accra",
+      "gpsAddress": "GA-004-6319"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import CTASection from '../components/CTASection.astro';
+import { getImage, hasImage } from '../lib/images';
+import company from '../data/company.json';
+import projectsData from '../data/projects.json';
+import donorsData from '../data/donors.json';
+import clientsData from '../data/clients.json';
+import type { Project, Donor, ClientLogo } from '../lib/types';
+
+const projects = projectsData as Project[];
+const donors = donorsData as Donor[];
+const clients = clientsData as ClientLogo[];
+
+const yearsActive = new Date().getFullYear() - company.founded;
+
+const featuredSlugs = [
+  'kasoa-interchange-project',
+  'elmina-fishing-port-rehabilitation-expansion-project-development-project',
+  'construction-works-for-takoradi-port-upgrade-and-expansion',
+  'design-review-and-construction-supervision-of-the-court-houses-for-selected-dist-2',
+];
+const featured = featuredSlugs
+  .map((slug) => projects.find((p) => p.slug === slug))
+  .filter((p): p is Project => Boolean(p));
+
+const heroImage = getImage('image96.jpeg');
+
+const stats = [
+  { value: `${yearsActive}+`, label: 'Years in operation' },
+  { value: `${projects.length}+`, label: 'Projects delivered' },
+  { value: `${donors.length}`, label: 'International donors partnered' },
+  { value: '4', label: 'Countries served' },
+];
+---
+
+<Layout title="NKA Consult">
+  <section class="relative overflow-hidden bg-ink-800">
+    <div class="absolute inset-0">
+      <Image src={heroImage} alt="" width={1600} height={1000} class="h-full w-full object-cover opacity-35" />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink-800 via-ink-800/80 to-ink-800/40"></div>
+    </div>
+    <div class="relative container-page py-24 sm:py-32">
+      <span class="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-400">
+        Engineers &amp; Management Consultants Since {company.founded}
+      </span>
+      <h1 class="mt-6 max-w-3xl text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-white">
+        Engineering infrastructure that moves Ghana forward.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+        {company.overview}
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-4">
+        <a href="/projects" class="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-ink-900 hover:bg-amber-400 transition-colors">
+          View Our Projects
+        </a>
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-md border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white">
+    <div class="container-page py-10 grid grid-cols-2 sm:grid-cols-4 gap-8">
+      {stats.map((s) => (
+        <div class="text-center sm:text-left">
+          <p class="text-3xl sm:text-4xl font-extrabold text-navy-800 tracking-tight">{s.value}</p>
+          <p class="mt-1 text-sm text-slate-500">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24">
+    <div class="container-page">
+      <SectionHeading
+        eyebrow="What we do"
+        title="Full lifecycle engineering and consulting services"
+        description="From feasibility studies through design, procurement, construction supervision and monitoring, NKA Consult manages the full project cycle for public and private clients across West Africa."
+      />
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {company.coreBusinessAreas.map((area, i) => (
+          <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-[var(--shadow-card)]">
+            <div class="flex h-10 w-10 items-center justify-center rounded-md bg-navy-800/[0.08] text-navy-800 font-bold">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-ink-800 font-medium">{area}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10">
+        <a href="/services" class="text-sm font-semibold text-navy-800 hover:text-navy-700">
+          Explore all services &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24 bg-white border-y border-slate-200">
+    <div class="container-page">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <SectionHeading
+          eyebrow="Track record"
+          title="Featured projects"
+          description="A sample of infrastructure NKA Consult has designed, supervised, or delivered across roads, ports, health facilities, and public buildings."
+        />
+        <a href="/projects" class="text-sm font-semibold text-navy-800 hover:text-navy-700 whitespace-nowrap">
+          View all {projects.length} projects &rarr;
+        </a>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {featured.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20">
+    <div class="container-page">
+      <p class="text-center text-xs font-semibold uppercase tracking-wider text-slate-500">
+        Trusted by government agencies, international donors, and private developers
+      </p>
+      <div class="mt-8 grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-8 gap-6 items-center">
+        {clients.slice(0, 16).map((client) =>
+          hasImage(client.file) ? (
+            <div class="flex items-center justify-center p-2 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all" title={client.name}>
+              <Image src={getImage(client.file)} alt={client.name} width={240} class="max-h-12 w-auto object-contain" />
+            </div>
+          ) : null
+        )}
+      </div>
+      <div class="mt-6 text-center">
+        <a href="/clients-donors" class="text-sm font-semibold text-navy-800 hover:text-navy-700">
+          See all clients &amp; donors &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Have a project in mind?"
+    description="Tell us about your infrastructure or consulting needs, and our team will follow up to discuss scope, timelines, and how we can help."
+  />
+</Layout>

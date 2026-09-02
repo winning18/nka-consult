@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTASection from '../components/CTASection.astro';
+import teamData from '../data/team.json';
+import type { TeamMember } from '../lib/types';
+
+const team = teamData as TeamMember[];
+const lead = team.find((m) => m.featured);
+const rest = team.filter((m) => !m.featured);
+
+function initials(name: string) {
+  return name
+    .replace(/^(Dr\.?|Mr\.?|Ing\.?)\s+/i, '')
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((n) => n[0])
+    .join('');
+}
+---
+
+<Layout title="Our People" description="Meet NKA Consult's leadership and core team of engineers, surveyors, and consultants.">
+  <section class="bg-navy-800 py-16 sm:py-20">
+    <div class="container-page">
+      <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Our People</span>
+      <h1 class="mt-3 max-w-2xl text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+        A core team of experienced engineers and consultants.
+      </h1>
+      <p class="mt-4 max-w-2xl text-base text-slate-300">
+        NKA Consult draws on a wide range of qualifications and competencies. Detailed curriculum vitae for our personnel can be provided on request.
+      </p>
+    </div>
+  </section>
+
+  {lead && (
+    <section class="py-16 sm:py-20">
+      <div class="container-page">
+        <div class="rounded-lg border border-slate-200 bg-white p-8 sm:p-10 shadow-[var(--shadow-card)] flex flex-col sm:flex-row gap-8">
+          <div class="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-navy-800 text-2xl font-bold text-white">
+            {initials(lead.name)}
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-ink-800">{lead.name}</h2>
+            <p class="text-sm font-medium text-amber-600">{lead.role} · {lead.credentials}</p>
+            <p class="mt-4 text-sm leading-relaxed text-slate-600">{lead.bio}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="py-16 sm:py-20 bg-white border-y border-slate-200">
+    <div class="container-page">
+      <SectionHeading eyebrow="Core team" title="Senior engineers & consultants" />
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {rest.map((member) => (
+          <div class="rounded-lg border border-slate-200 bg-paper-50 p-6">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-navy-800/10 text-sm font-bold text-navy-800">
+              {initials(member.name)}
+            </div>
+            <h3 class="mt-4 font-bold text-ink-800">{member.name}</h3>
+            <p class="text-xs font-medium text-amber-600">{member.role}</p>
+            <p class="text-xs text-slate-500">{member.credentials}</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{member.bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection title="Need a detailed CV for a tender submission?" description="Full curriculum vitae for our technical personnel are available on request." />
+</Layout>
