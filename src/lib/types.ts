@@ -42,11 +42,6 @@ export interface ClientLogo {
   name: string;
 }
 
-export interface OfficePhoto {
-  file: string;
-  caption: string;
-}
-
 export interface Certification {
   file: string;
   title: string;
