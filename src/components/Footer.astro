@@ -1,15 +1,16 @@
 ---
+import { Image } from 'astro:assets';
 import company from '../data/company.json';
 import { url } from '../lib/url';
+import logo from '../assets/images/logo-nka-consult.png';
 const year = new Date().getFullYear();
 ---
 
 <footer class="bg-ink-800 text-slate-300">
   <div class="container-page py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
     <div>
-      <div class="flex items-center gap-2.5 mb-4">
-        <span class="flex h-9 w-9 items-center justify-center rounded-md bg-white/10 text-white font-bold text-sm">NK</span>
-        <span class="font-bold text-white text-[15px]">NKA Consult</span>
+      <div class="mb-4">
+        <Image src={logo} alt="NKA Consult" class="h-10 w-auto brightness-0 invert" />
       </div>
       <p class="text-sm leading-relaxed text-slate-400">
         {company.tagline}. Delivering engineering and project management consulting services across Ghana and West Africa since {company.founded}.
