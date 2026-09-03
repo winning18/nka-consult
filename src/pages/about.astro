@@ -49,7 +49,10 @@ import company from '../data/company.json';
       <div>
         <SectionHeading eyebrow="Structure" title="Organization" />
         <p class="mt-4 text-sm leading-relaxed text-slate-600">{company.organization}</p>
-        <p class="mt-4 text-sm leading-relaxed text-slate-600">{company.specializationNote}</p>
+        <p class="mt-4 text-sm font-medium text-ink-800">We specialize in:</p>
+        <ul class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 list-disc pl-5 marker:text-amber-500 text-sm text-slate-600">
+          {company.specializations.map((item) => <li>{item}</li>)}
+        </ul>
       </div>
       <div>
         <SectionHeading eyebrow="How we deliver" title="Project Execution & Quality Assurance" />
@@ -61,7 +64,7 @@ import company from '../data/company.json';
   <section class="py-16 sm:py-20 bg-white border-y border-slate-200">
     <div class="container-page grid gap-12 lg:grid-cols-2">
       <div>
-        <SectionHeading eyebrow="Track record" title="Core Competencies" />
+        <SectionHeading title="Track Records" />
         <p class="mt-4 text-sm leading-relaxed text-slate-600">{company.coreCompetencies}</p>
       </div>
       <div>

@@ -44,8 +44,17 @@
     "Services Engineers"
   ],
   "legalStatus": "The firm is registered in Ghana with the Registrar General's Department and is duly authorised to operate in Ghana. NKA Consult is also registered with the relevant tax authorities: Ghana Revenue Authority, Value Added Tax (VAT), and the Public Procurement Authority (PPA). Key staff are registered with the relevant professional associations in Ghana, including the Ghana Institution of Engineering (GhIE) and the Ghana Institution of Surveyors (GhIS).",
-  "organization": "NKA Consult is managed by a Managing Consultant and Chief Executive Officer (CEO), who holds advanced qualifications in Civil Engineering and Business Management. The company has two major divisions: Engineering and Management Consulting. Each division is further divided into several units based on specialization, each staffed with competent professionals delivering cutting edge solutions to the firm's clients.",
-  "specializationNote": "The fields of specialization are divided into two broad areas: Engineering and Management Consulting. Crosscutting areas such as Procurement Management, Impact Assessment, and Monitoring and Evaluation are addressed by either division.",
+  "organization": "NKA Consult is led by consultants who hold advanced qualifications in Engineering and Management.",
+  "specializations": [
+    "Civil Engineering",
+    "Procurement Management",
+    "Impact Assessment",
+    "Monitoring and Evaluation",
+    "Capacity Building",
+    "Feasibility Studies",
+    "Structural Engineering",
+    "Technical Audits"
+  ],
   "projectExecution": "As Consultants, the Firm favours a participatory and interactive approach to identifying client problems and providing solutions. Each project is assigned a Project Manager responsible for monthly technical and financial reports that allow an accurate evaluation of progress by the client. A set of qualitative and quantitative monitoring indicators, agreed at project inception and adapted to each project's needs, is used by the Project Manager to ensure goals, objectives and expected results are met in a timely and cost-effective manner.",
   "coreCompetencies": "NKA Consult has provided services to several clients in managing projects in buildings, civil and structural engineering, architectural and quantity surveying. Other specializations include highway, traffic and transportation engineering, waste management, water and sanitation, social and environmental impact assessment, and management consulting. The firm has also taken on subcontract assignments for other consultants requiring its expertise.",
   "contact": {

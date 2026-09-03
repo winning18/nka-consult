@@ -70,7 +70,7 @@ export interface Company {
   coreTeamDisciplines: string[];
   legalStatus: string;
   organization: string;
-  specializationNote: string;
+  specializations: string[];
   projectExecution: string;
   coreCompetencies: string;
   contact: {
