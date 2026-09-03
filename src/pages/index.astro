@@ -32,7 +32,6 @@ const heroImage = getImage('image96.jpeg');
 
 const stats = [
   { value: `${yearsActive}+`, label: 'Years in operation' },
-  { value: `${projects.length}+`, label: 'Projects delivered' },
   { value: `${donors.length}`, label: 'International donors partnered' },
   { value: '4', label: 'Countries served' },
 ];
@@ -66,7 +65,7 @@ const stats = [
   </section>
 
   <section class="border-b border-slate-200 bg-white">
-    <div class="container-page py-10 grid grid-cols-2 sm:grid-cols-4 gap-8">
+    <div class="container-page py-10 grid grid-cols-3 gap-8">
       {stats.map((s) => (
         <div class="text-center sm:text-left">
           <p class="text-3xl sm:text-4xl font-extrabold text-navy-800 tracking-tight">{s.value}</p>
@@ -107,10 +106,10 @@ const stats = [
         <SectionHeading
           eyebrow="Track record"
           title="Featured projects"
-          description="A sample of infrastructure NKA Consult has designed, supervised, or delivered across roads, ports, health facilities, and public buildings."
+          description="A sample of infrastructure NKA Consult has designed, supervised, or delivered across roads, ports, and public buildings."
         />
         <a href={url('/projects')} class="text-sm font-semibold text-navy-800 hover:text-navy-700 whitespace-nowrap">
-          View all {projects.length} projects &rarr;
+          View all projects &rarr;
         </a>
       </div>
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

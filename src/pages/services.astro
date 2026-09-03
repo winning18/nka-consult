@@ -1,13 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SectionHeading from '../components/SectionHeading.astro';
 import CTASection from '../components/CTASection.astro';
-import { url } from '../lib/url';
-import company from '../data/company.json';
-import projectsData from '../data/projects.json';
-import type { Project } from '../lib/types';
-
-const projects = projectsData as Project[];
 
 const serviceDetails = [
   {
@@ -39,12 +32,6 @@ const serviceDetails = [
     description: 'Institutional strengthening, procurement audits, contract management reviews, and organizational development advisory.',
   },
 ];
-
-const categoryCounts = projects.reduce<Record<string, { label: string; count: number }>>((acc, p) => {
-  acc[p.category] = acc[p.category] ?? { label: p.categoryLabel, count: 0 };
-  acc[p.category].count += 1;
-  return acc;
-}, {});
 ---
 
 <Layout title="Services" description="NKA Consult's core service areas: project cycle management, civil and structural engineering, urban development, training, safeguards, road safety, and management consulting.">
@@ -65,20 +52,6 @@ const categoryCounts = projects.reduce<Record<string, { label: string; count: nu
           <p class="mt-2.5 text-sm leading-relaxed text-slate-600">{service.description}</p>
         </div>
       ))}
-    </div>
-  </section>
-
-  <section class="py-16 sm:py-20 bg-white border-y border-slate-200">
-    <div class="container-page">
-      <SectionHeading eyebrow="Delivered across sectors" title="Project experience by sector" align="center" class="mx-auto" />
-      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {Object.entries(categoryCounts).map(([key, val]) => (
-          <a href={url(`/projects?category=${key}`)} class="rounded-lg border border-slate-200 bg-paper-50 p-6 hover:border-navy-800/40 transition-colors">
-            <p class="text-3xl font-extrabold text-navy-800">{val.count}</p>
-            <p class="mt-1 text-sm font-medium text-ink-800">{val.label}</p>
-          </a>
-        ))}
-      </div>
     </div>
   </section>
 
