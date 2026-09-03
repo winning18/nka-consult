@@ -5,8 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://winning18.github.io',
-  base: '/nka-consult/',
+  site: 'https://nkaconsult.com',
   vite: {
     plugins: [tailwindcss()]
   }
