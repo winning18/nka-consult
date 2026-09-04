@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import company from '../data/company.json';
 ---
 
 <Layout title="Contact" description="Get in touch with NKA Consult, Accra, Ghana. Engineers and Management Consultants.">
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
   <section class="bg-navy-800 py-16 sm:py-20">
     <div class="container-page">
       <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Contact</span>
@@ -88,6 +90,8 @@ import company from '../data/company.json';
   const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
   const status = document.querySelector<HTMLParagraphElement>('[data-form-status]');
   const submitButton = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const loadedAt = Date.now();
+  const MIN_SUBMIT_DELAY_MS = 3000;
 
   function showStatus(message: string, tone: 'success' | 'error') {
     if (!status) return;
@@ -99,6 +103,14 @@ import company from '../data/company.json';
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form) return;
+
+    // Bots tend to fill and submit forms almost instantly; a genuine visitor
+    // can't realistically do it this fast. Fail silently-ish rather than
+    // telling automated scripts exactly why they were blocked.
+    if (Date.now() - loadedAt < MIN_SUBMIT_DELAY_MS) {
+      showStatus('Please take a moment to review your message, then send again.', 'error');
+      return;
+    }
 
     if (submitButton) submitButton.disabled = true;
 

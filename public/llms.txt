@@ -1,0 +1,21 @@
+# NKA Consult
+
+> NKA Consult is an engineering and project management consultancy based in Accra, Ghana, founded in 2002. The firm specializes in civil and structural engineering, project cycle management, urban development, road safety and transportation engineering, and management consulting for government agencies, international donors, and private developers across Ghana and West Africa.
+
+## Company
+
+- [About](https://nkaconsult.com/about/): Company overview, vision, mission, core values, organization, and legal status.
+- [Services](https://nkaconsult.com/services/): Core service areas including project cycle management, civil and structural engineering, urban development, training and capacity building, safeguards management, road safety and transportation engineering, and management consulting.
+- [Our People](https://nkaconsult.com/team/): Leadership and core team of engineers, surveyors, and consultants.
+- [Credentials](https://nkaconsult.com/credentials/): Company registration and tax certificates, and office location.
+
+## Work
+
+- [Projects](https://nkaconsult.com/projects/): Portfolio of road, building, port, agricultural, and water & sanitation infrastructure projects across Ghana, Liberia, and Nigeria.
+- [Clients & Donors](https://nkaconsult.com/clients-donors/): Government agencies, private developers, and international development partners, including the World Bank, African Development Bank, EU, and KfW.
+
+## Contact
+
+- [Contact](https://nkaconsult.com/contact/): Head office address, phone, email, and enquiry form.
+- Head office: 57 Kade Avenue, Kanda Estates, Accra, Ghana
+- Email: info@nkaconsult.com

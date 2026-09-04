@@ -30,7 +30,7 @@ const logoImageURL = new URL(logoImage.src, Astro.site);
 
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['ProfessionalService', 'GeneralContractor'],
   name: company.name,
   alternateName: company.tagline,
   url: Astro.site?.toString(),
@@ -44,6 +44,12 @@ const organizationSchema = {
     addressLocality: 'Accra',
     addressCountry: 'GH',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 5.5809575,
+    longitude: -0.1947088,
+  },
+  areaServed: ['Ghana', 'West Africa'],
   telephone: company.contact.phone,
   email: company.contact.emails[0],
 };
@@ -54,6 +60,7 @@ const organizationSchema = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    <link rel="apple-touch-icon" sizes="180x180" href={url('/apple-touch-icon.png')} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />

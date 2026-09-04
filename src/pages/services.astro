@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CTASection from '../components/CTASection.astro';
 
 const serviceDetails = [
@@ -35,6 +36,7 @@ const serviceDetails = [
 ---
 
 <Layout title="Services" description="NKA Consult's core service areas: project cycle management, civil and structural engineering, urban development, training, safeguards, road safety, and management consulting.">
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
   <section class="bg-navy-800 py-16 sm:py-20">
     <div class="container-page">
       <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Services</span>

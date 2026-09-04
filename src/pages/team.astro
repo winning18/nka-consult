@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import CTASection from '../components/CTASection.astro';
 import teamData from '../data/team.json';
@@ -21,6 +22,7 @@ function initials(name: string) {
 ---
 
 <Layout title="Our People" description="Meet NKA Consult's leadership and core team of engineers, surveyors, and consultants.">
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Our People' }]} />
   <section class="bg-navy-800 py-16 sm:py-20">
     <div class="container-page">
       <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Our People</span>

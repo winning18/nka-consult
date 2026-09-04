@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import projectsData from '../../data/projects.json';
 import type { Project } from '../../lib/types';
@@ -12,6 +13,7 @@ const categories = Array.from(
 ---
 
 <Layout title="Projects" description="Browse NKA Consult's portfolio of road, building, port, agricultural, and water & sanitation infrastructure projects.">
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Projects' }]} />
   <section class="bg-navy-800 py-16 sm:py-20">
     <div class="container-page">
       <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Projects</span>

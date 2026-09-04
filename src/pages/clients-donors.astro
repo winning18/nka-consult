@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import CTASection from '../components/CTASection.astro';
 import { getImage, hasImage } from '../lib/images';
@@ -13,6 +14,7 @@ const donors = donorsData as Donor[];
 ---
 
 <Layout title="Clients & Donors" description="Government agencies, private developers, and international development partners NKA Consult has worked with.">
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Clients' }]} />
   <section class="bg-navy-800 py-16 sm:py-20">
     <div class="container-page">
       <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Clients &amp; Donors</span>

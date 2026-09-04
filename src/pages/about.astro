@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import CTASection from '../components/CTASection.astro';
 import { url } from '../lib/url';
@@ -7,6 +8,7 @@ import company from '../data/company.json';
 ---
 
 <Layout title="About Us" description="Learn about NKA Consult's history, vision, mission, core values, and organizational structure.">
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
   <section class="bg-navy-800 py-16 sm:py-20">
     <div class="container-page">
       <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">About Us</span>
