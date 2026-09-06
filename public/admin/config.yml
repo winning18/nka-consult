@@ -229,7 +229,7 @@ collections:
     summary: "{{title}} — {{date}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
       - { label: "Summary (shown on the Newsroom list page)", name: "summary", widget: "text" }
       - { label: "Article Body", name: "body", widget: "markdown" }
 
@@ -248,6 +248,6 @@ collections:
         widget: "select"
         default: "Full-time"
         options: ["Full-time", "Part-time", "Contract", "Internship"]
-      - { label: "Date Posted", name: "datePosted", widget: "date", format: "YYYY-MM-DD" }
-      - { label: "Closing Date (optional)", name: "closingDate", widget: "date", format: "YYYY-MM-DD", required: false }
+      - { label: "Date Posted", name: "datePosted", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { label: "Closing Date (optional)", name: "closingDate", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true, required: false }
       - { label: "Job Description", name: "body", widget: "markdown" }
