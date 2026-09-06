@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NKA Consult — Admin</title>
     <link rel="icon" href="/favicon-32x32.png" />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      // This same file is deployed both to nkaconsult.com (GitHub Pages) and
+      // admin.nkaconsult.com (Netlify). Netlify Identity + Git Gateway only
+      // work same-origin, so the CMS itself only runs on admin.nkaconsult.com;
+      // any other host just bounces there.
+      if (window.location.hostname !== 'admin.nkaconsult.com') {
+        window.location.replace('https://admin.nkaconsult.com/admin/' + window.location.hash);
+      }
+    </script>
   </head>
   <body>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.init({
-          APIUrl: 'https://cosmic-sunflower-849032.netlify.app/.netlify/identity',
-        });
         window.netlifyIdentity.on('init', (user) => {
           if (!user) {
             window.netlifyIdentity.on('login', () => {
