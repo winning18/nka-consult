@@ -1,0 +1,221 @@
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://nkaconsult.com
+display_url: https://nkaconsult.com
+logo_url: /favicon-192x192.png
+
+media_folder: "src/assets/images"
+public_folder: ""
+
+publish_mode: simple
+
+collections:
+  - name: "company"
+    label: "Company Info"
+    files:
+      - file: "src/data/company.json"
+        label: "Company Info"
+        name: "company"
+        fields:
+          - { label: "Company Name", name: "name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Founded (Year)", name: "founded", widget: "number", value_type: "int" }
+          - { label: "Overview Paragraph", name: "overview", widget: "text" }
+          - { label: "Vision Statement", name: "vision", widget: "text" }
+          - { label: "Mission Statement", name: "mission", widget: "text" }
+          - label: "Core Values"
+            name: "coreValues"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Core Business Areas"
+            name: "coreBusinessAreas"
+            widget: "list"
+            allow_add: true
+          - label: "Core Team Disciplines"
+            name: "coreTeamDisciplines"
+            widget: "list"
+            allow_add: true
+          - { label: "Legal Status Paragraph", name: "legalStatus", widget: "text" }
+          - { label: "Organization Paragraph (About page)", name: "organization", widget: "text" }
+          - label: "Specializations (About page bullet list)"
+            name: "specializations"
+            widget: "list"
+            allow_add: true
+          - { label: "Project Execution & Quality Assurance Paragraph", name: "projectExecution", widget: "text" }
+          - { label: "Track Records Paragraph", name: "coreCompetencies", widget: "text" }
+          - label: "Contact Details"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Postal Address (P.O. Box)", name: "poBox", widget: "string" }
+              - { label: "Phone Number", name: "phone", widget: "string", hint: "Used for tel: links and the WhatsApp button. Format: 020 816 1079" }
+              - label: "Email Addresses"
+                name: "emails"
+                widget: "list"
+                allow_add: true
+                hint: "First email is used for the contact form and mailto links."
+              - label: "Head Office"
+                name: "headOffice"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Street Address", name: "address", widget: "string" }
+                  - { label: "GPS Address (Ghana Post GPS)", name: "gpsAddress", widget: "string" }
+
+  - name: "team"
+    label: "Our People"
+    files:
+      - file: "src/data/team.json"
+        label: "Team Members"
+        name: "team"
+        fields:
+          - label: "Team Members"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { label: "Full Name", name: "name", widget: "string" }
+              - { label: "Credentials (e.g. BSc, MSc)", name: "credentials", widget: "string" }
+              - { label: "Role / Title", name: "role", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Featured as Lead (shows large card at top of page)", name: "featured", widget: "boolean", default: false }
+
+  - name: "donors"
+    label: "Donor Experience"
+    files:
+      - file: "src/data/donors.json"
+        label: "Donor Agencies"
+        name: "donors"
+        fields:
+          - label: "Donor Agencies"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.agency}}"
+            fields:
+              - { label: "Agency Name", name: "agency", widget: "string" }
+              - { label: "NKA's Role", name: "role", widget: "string" }
+              - label: "Projects"
+                name: "projects"
+                widget: "list"
+                allow_add: true
+                hint: "One entry per project or programme with this donor."
+
+  - name: "clients"
+    label: "Client & Partner Logos"
+    files:
+      - file: "src/data/clients.json"
+        label: "Client Logos"
+        name: "clients"
+        fields:
+          - label: "Clients & Partners"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Logo Image", name: "file", widget: "image", hint: "Upload the logo file. Works best as PNG with a transparent background." }
+              - { label: "Client / Partner Name", name: "name", widget: "string" }
+
+  - name: "certifications"
+    label: "Registration Certificates"
+    files:
+      - file: "src/data/certifications.json"
+        label: "Certificates"
+        name: "certifications"
+        fields:
+          - label: "Certificates"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Certificate Image / Scan", name: "file", widget: "image" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Detail (e.g. registration number, date)", name: "detail", widget: "string" }
+
+  - name: "services"
+    label: "Services"
+    files:
+      - file: "src/data/services.json"
+        label: "Service Areas"
+        name: "services"
+        fields:
+          - label: "Service Areas"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "projects"
+    label: "Projects"
+    files:
+      - file: "src/data/projects.json"
+        label: "All Projects"
+        name: "projects"
+        fields:
+          - label: "Projects"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.categoryLabel}})"
+            fields:
+              - { label: "URL Slug (no spaces, lowercase, hyphens only — changing this changes the project's web address)", name: "slug", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Road Construction", value: "road-construction" }
+                  - { label: "Building Construction", value: "building-construction" }
+                  - { label: "Ports & Harbour", value: "ports-and-harbour" }
+                  - { label: "Agricultural Infrastructure", value: "agricultural-infrastructure" }
+                  - { label: "Water & Sanitation", value: "water-and-sanitation" }
+              - { label: "Category Label (shown on the site)", name: "categoryLabel", widget: "string" }
+              - { label: "Project Title", name: "title", widget: "string" }
+              - { label: "Country", name: "country", widget: "string", required: false }
+              - { label: "Location", name: "location", widget: "string", required: false }
+              - { label: "Client", name: "client", widget: "string", required: false }
+              - { label: "Start Date", name: "startDate", widget: "string", required: false }
+              - { label: "Completion Date", name: "completionDate", widget: "string", required: false }
+              - { label: "Duration", name: "duration", widget: "string", required: false }
+              - label: "Project Overview"
+                name: "narrative"
+                widget: "object"
+                fields:
+                  - { label: "Overview Text", name: "intro", widget: "text", required: false }
+                  - label: "Bullet Points (optional)"
+                    name: "items"
+                    widget: "list"
+                    required: false
+                    allow_add: true
+              - label: "NKA's Role"
+                name: "role"
+                widget: "object"
+                fields:
+                  - { label: "Role Text", name: "intro", widget: "text", required: false }
+                  - label: "Bullet Points (optional)"
+                    name: "items"
+                    widget: "list"
+                    required: false
+                    allow_add: true
+              - label: "Value Added"
+                name: "valueAdded"
+                widget: "object"
+                fields:
+                  - { label: "Value Added Text", name: "intro", widget: "text", required: false }
+                  - label: "Bullet Points (optional)"
+                    name: "items"
+                    widget: "list"
+                    required: false
+                    allow_add: true
+              - label: "Photos"
+                name: "images"
+                widget: "list"
+                required: false
+                summary: "{{fields.caption}}"
+                fields:
+                  - { label: "Image", name: "file", widget: "image" }
+                  - { label: "Caption (optional)", name: "caption", widget: "string", required: false }

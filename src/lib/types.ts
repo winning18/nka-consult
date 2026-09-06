@@ -1,4 +1,4 @@
-export type RichText = string | { intro: string | null; items: string[] };
+export type RichText = { intro: string; items: string[] };
 
 export interface ProjectImage {
   file: string;
@@ -17,9 +17,9 @@ export interface Project {
   completionDate: string;
   duration: string;
   value: string;
-  narrative: RichText | null;
-  role: RichText | null;
-  valueAdded: RichText | null;
+  narrative: RichText;
+  role: RichText;
+  valueAdded: RichText;
   images: ProjectImage[];
 }
 

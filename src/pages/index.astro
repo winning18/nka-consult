@@ -12,9 +12,9 @@ import donorsData from '../data/donors.json';
 import clientsData from '../data/clients.json';
 import type { Project, Donor, ClientLogo } from '../lib/types';
 
-const projects = projectsData as Project[];
-const donors = donorsData as Donor[];
-const clients = clientsData as ClientLogo[];
+const projects = projectsData.items as Project[];
+const donors = donorsData.items as Donor[];
+const clients = clientsData.items as ClientLogo[];
 
 const yearsActive = new Date().getFullYear() - company.founded;
 

@@ -9,8 +9,8 @@ import clientsData from '../data/clients.json';
 import donorsData from '../data/donors.json';
 import type { ClientLogo, Donor } from '../lib/types';
 
-const clients = (clientsData as ClientLogo[]).filter((c) => hasImage(c.file));
-const donors = donorsData as Donor[];
+const clients = (clientsData.items as ClientLogo[]).filter((c) => hasImage(c.file));
+const donors = donorsData.items as Donor[];
 ---
 
 <Layout title="Clients & Donors" description="Government agencies, private developers, and international development partners NKA Consult has worked with.">

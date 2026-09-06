@@ -11,7 +11,7 @@ import projectsData from '../../data/projects.json';
 import type { Project } from '../../lib/types';
 
 export function getStaticPaths() {
-  const projects = projectsData as Project[];
+  const projects = projectsData.items as Project[];
   return projects.map((project) => ({
     params: { slug: project.slug },
     props: { project },
@@ -19,7 +19,7 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props as { project: Project };
-const projects = projectsData as Project[];
+const projects = projectsData.items as Project[];
 
 const related = projects
   .filter((p) => p.category === project.category && p.slug !== project.slug)
@@ -38,7 +38,7 @@ const facts = [
 ].filter((f) => f.value);
 ---
 
-<Layout title={project.title} description={typeof project.narrative === 'string' ? project.narrative.slice(0, 155) : project.title}>
+<Layout title={project.title} description={project.narrative.intro ? project.narrative.intro.slice(0, 155) : project.title}>
   <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Projects', href: '/projects' }, { label: project.title }]} />
   <section class="bg-navy-800 py-14 sm:py-16">
     <div class="container-page">
@@ -65,19 +65,19 @@ const facts = [
   <section class="py-14 sm:py-16">
     <div class="container-page grid gap-12 lg:grid-cols-3">
       <div class="lg:col-span-2 space-y-10">
-        {project.narrative && (
+        {(project.narrative.intro || project.narrative.items.length > 0) && (
           <div>
             <h2 class="text-lg font-bold text-ink-800">Project Overview</h2>
             <RichText value={project.narrative} class="mt-3 text-sm leading-relaxed text-slate-600" />
           </div>
         )}
-        {project.role && (
+        {(project.role.intro || project.role.items.length > 0) && (
           <div>
             <h2 class="text-lg font-bold text-ink-800">NKA&rsquo;s Role</h2>
             <RichText value={project.role} class="mt-3 text-sm leading-relaxed text-slate-600" />
           </div>
         )}
-        {project.valueAdded && (
+        {(project.valueAdded.intro || project.valueAdded.items.length > 0) && (
           <div>
             <h2 class="text-lg font-bold text-ink-800">Value Added</h2>
             <RichText value={project.valueAdded} class="mt-3 text-sm leading-relaxed text-slate-600" />

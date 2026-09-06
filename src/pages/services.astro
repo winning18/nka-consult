@@ -2,37 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CTASection from '../components/CTASection.astro';
+import servicesData from '../data/services.json';
 
-const serviceDetails = [
-  {
-    title: 'Project Cycle Management',
-    description: 'Design, Procurement, Supervision, Appraisal, Monitoring and Evaluation across the full lifecycle of infrastructure projects.',
-  },
-  {
-    title: 'Civil and Structural Engineering',
-    description: 'Structural design, review, and construction supervision for roads, bridges, buildings, and marine infrastructure.',
-  },
-  {
-    title: 'Urban Development and Management',
-    description: 'Planning and delivery of urban infrastructure, including markets, transport terminals, drainage, and public facilities.',
-  },
-  {
-    title: 'Training and Capacity Building',
-    description: 'Training programmes for contractors, client staff, and institutions on contract management, procurement, and technical delivery.',
-  },
-  {
-    title: 'Safeguards Management',
-    description: 'Traffic, transport, environmental and social safeguards, including resettlement impact assessment and management.',
-  },
-  {
-    title: 'Road Safety, Traffic & Transportation Engineering',
-    description: 'Traffic data collection, road safety audits, transportation planning, and traffic management scheme design.',
-  },
-  {
-    title: 'Management Consulting',
-    description: 'Technical audit, procurement audits, contract management reviews, and organizational development advisory.',
-  },
-];
+const serviceDetails = servicesData.items;
 ---
 
 <Layout title="Services" description="NKA Consult's core service areas: project cycle management, civil and structural engineering, urban development, training, safeguards, road safety, and management consulting.">

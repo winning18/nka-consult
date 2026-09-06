@@ -6,7 +6,7 @@ import CTASection from '../components/CTASection.astro';
 import teamData from '../data/team.json';
 import type { TeamMember } from '../lib/types';
 
-const team = teamData as TeamMember[];
+const team = teamData.items as TeamMember[];
 const lead = team.find((m) => m.featured);
 const rest = team.filter((m) => !m.featured);
 

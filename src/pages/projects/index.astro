@@ -5,7 +5,7 @@ import ProjectCard from '../../components/ProjectCard.astro';
 import projectsData from '../../data/projects.json';
 import type { Project } from '../../lib/types';
 
-const projects = projectsData as Project[];
+const projects = projectsData.items as Project[];
 
 const categories = Array.from(
   new Map(projects.map((p) => [p.category, p.categoryLabel])).entries()
