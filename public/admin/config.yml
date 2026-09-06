@@ -219,3 +219,35 @@ collections:
                 fields:
                   - { label: "Image", name: "file", widget: "image" }
                   - { label: "Caption (optional)", name: "caption", widget: "string", required: false }
+
+  - name: "news"
+    label: "Newsroom"
+    folder: "src/content/news"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Summary (shown on the Newsroom list page)", name: "summary", widget: "text" }
+      - { label: "Article Body", name: "body", widget: "markdown" }
+
+  - name: "jobs"
+    label: "Careers"
+    folder: "src/content/jobs"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{location}}"
+    fields:
+      - { label: "Job Title", name: "title", widget: "string" }
+      - { label: "Location", name: "location", widget: "string", default: "Accra, Ghana" }
+      - label: "Employment Type"
+        name: "type"
+        widget: "select"
+        default: "Full-time"
+        options: ["Full-time", "Part-time", "Contract", "Internship"]
+      - { label: "Date Posted", name: "datePosted", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Closing Date (optional)", name: "closingDate", widget: "date", format: "YYYY-MM-DD", required: false }
+      - { label: "Job Description", name: "body", widget: "markdown" }
